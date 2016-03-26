@@ -1,8 +1,7 @@
 'use strict'
 var productService = angular.module('productServices',['ngResource']);
 
-
-productService.factory('productService',['$resource','API_URL',function($resource,API_URL){
+productService.factory('productService', ['$resource','API_URL',function($resource,API_URL){
     return $resource(API_URL+'/product/:id', { id: '@_id' }, {
         update: {
             method: 'PUT' // this method issues a PUT request

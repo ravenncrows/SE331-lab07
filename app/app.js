@@ -31,4 +31,6 @@ labApp.config(function(API_URL,$translateProvider){
     $translateProvider.useStorage('UrlLanguageStorage');
     $translateProvider.preferredLanguage('en');
     $translateProvider.fallbackLanguage('en');
-})
+});
+
+
