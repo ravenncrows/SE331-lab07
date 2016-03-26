@@ -12,6 +12,7 @@ public interface ProductDao {
     List<Product> getProductsByName(String name);
     List<Product> getProductByName(String name);
     List<Product> getProductByDescription(String description);
+    List<Product> getProductsByNameOrDescription (String name,String description);
     Product getProduct(Long id);
     Product addProduct(Product product);
     Product deleteProduct(Product product);

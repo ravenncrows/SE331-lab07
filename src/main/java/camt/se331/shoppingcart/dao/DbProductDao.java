@@ -25,6 +25,9 @@ public class DbProductDao implements ProductDao{
     public List<Product> getProductsByName(String name) {
         return productRepository.findByNameContainingIgnoreCase(name);
     }
+    public List<Product> getProductsByNameOrDescription(String name,String description) {
+        return productRepository.findByNameOrDescriptionContainingIgnoreCase(name,name);
+    }
 
     @Override
     public List<Product> getProductByName(String name) {

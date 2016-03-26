@@ -9,6 +9,7 @@ import java.util.List;
  * Created by Dto on 2/7/2015.
  */
 public interface ShoppingCartDao {
+    ShoppingCart findById(Long id);
     List<ShoppingCart> getShoppingCarts();
     List<ShoppingCart> getShoppingCartBefore(Date stateDate);
     List<ShoppingCart> getShoppingCartBetween(Date stateDate, Date stopDate);
