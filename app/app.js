@@ -6,7 +6,8 @@ var labApp = angular.module('labApp', [
     'productMainController',
     'languageControllers',
     'languageServices',
-    'pascalprecht.translate'
+    'pascalprecht.translate',
+    'shoppingCartControllers'
 ])
 labApp.config(['$routeProvider',
   function($routeProvider) {
@@ -23,6 +24,11 @@ labApp.config(['$routeProvider',
           templateUrl: 'template/productList.html',
           controller: 'listProductController'
       }).
+      when('/shoppingCart/:id',{
+      templateUrl:'template/shoppingCart.html',
+      controller:'showShoppingCartController'
+  }).
+
        otherwise({redirectTo: '/listProduct'});
 }]);
 labApp.constant('API_URL','http://localhost:8080');

@@ -1,7 +1,9 @@
 package camt.se331.shoppingcart.dao;
 
 import camt.se331.shoppingcart.entity.Product;
+import camt.se331.shoppingcart.entity.SelectedProduct;
 import camt.se331.shoppingcart.repository.ProductRepository;
+import org.omg.CORBA.PUBLIC_MEMBER;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
@@ -23,7 +25,7 @@ public class DbProductDao implements ProductDao{
 
     @Override
     public List<Product> getProductsByName(String name) {
-        return productRepository.findByNameContainingIgnoreCase(name);
+        return productRepository.findByNameContaining(name);
     }
     public List<Product> getProductsByNameOrDescription(String name,String description) {
         return productRepository.findByNameOrDescriptionContainingIgnoreCase(name,name);
@@ -55,9 +57,11 @@ public class DbProductDao implements ProductDao{
         product.setId(null);
         return product;
     }
-
     @Override
     public Product updateProduct(Product product) {
         return productRepository.save(product);
     }
+
+
 }
+
