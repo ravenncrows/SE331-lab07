@@ -27,7 +27,7 @@ public class Product implements Comparable{
 
     public Product(){
 
-    };
+    }
 
     public Double getNetPrice(){
         return getTotalPrice()*(1-VatEntity.getInstance().getVat());

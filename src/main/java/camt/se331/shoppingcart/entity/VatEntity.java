@@ -5,7 +5,7 @@ import javax.persistence.Entity;
 /**
  * Created by Dto on 2/22/2015.
  */
-@Entity
+
 public class VatEntity {
 
     private static VatEntity vatEntity;

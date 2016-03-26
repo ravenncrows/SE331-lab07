@@ -26,17 +26,17 @@ public class ShoppingCartServiceImpl implements ShoppingCartService{
 
                 @Override
         public List<ShoppingCart> getShoppingCarts() {
-                return null;
+                return shoppingCartDao.getShoppingCarts();
             }
 
     @Override
     public List<ShoppingCart> getShoppingCartBefore(Date stateDate) {
-        return null;
+        return shoppingCartDao.getShoppingCartBefore(stateDate);
     }
 
     @Override
         public List<ShoppingCart> getShoppingCartBetween(Date stateDate, Date stopDate) {
-                return null;
+                return shoppingCartDao.getShoppingCartBetween(stateDate,stopDate);
             }
 
                 @Override
@@ -46,7 +46,7 @@ public class ShoppingCartServiceImpl implements ShoppingCartService{
 
                 @Override
         public ShoppingCart deleteShoppingCart(ShoppingCart shoppingCart) {
-               return null;
+               return shoppingCartDao.deleteShoppingCart(shoppingCart);
             }
     }
 
