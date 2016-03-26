@@ -20,3 +20,20 @@ productService.service('totalCalService',function() {
         return output;
     }
 })
+productService.factory('queryProductService',function($resource){
+    return $resource('/getProduct/?name=:name',
+        {
+            query:{method:'GET',params:{name:''},isArray:true}
+
+        }
+    )
+})
+productMainController.controller('listProductController', ['$scope', '$http', '$rootScope','productService','$route','totalCalService','queryProductService',
+     function ($scope, $http, $rootScope,productService,$route,totalCalService,queryProductService) {
+         $scope.searchProduct = function(name){
+                       queryProductService.query({name:name},function(data) {
+                                $scope.products = data;
+                            });
+                   }
+
+     }])
