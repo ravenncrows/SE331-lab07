@@ -9,6 +9,7 @@ import java.util.List;
  */
 public interface ProductDao {
     List<Product> getProducts();
+    List<Product> getProductsByName(String name);
     List<Product> getProductByName(String name);
     List<Product> getProductByDescription(String description);
     Product getProduct(Long id);
