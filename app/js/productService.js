@@ -7,6 +7,7 @@ productService.factory('productService', ['$resource','API_URL',function($resour
             method: 'PUT' // this method issues a PUT request
         }});
 
+
 }])
 
 productService.service('totalCalService',function() {
@@ -20,3 +21,12 @@ productService.service('totalCalService',function() {
         return output;
     }
 })
+productService.factory('queryProductService',['$resource','API_URL',function($resource,API_URL){
+        return $resource(API_URL+'/getProduct/?name=:name',
+            {query:{method:'GET',params:{name:''},isArray:true}
+
+            })
+}])
+
+
+

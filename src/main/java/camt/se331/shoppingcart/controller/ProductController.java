@@ -18,6 +18,12 @@ public class ProductController {
     @Autowired
     ProductService productService;
 
+    @RequestMapping(value = "getProduct",method = RequestMethod.GET)
+        public  List<Product> getListByName(@RequestParam("name")String name){
+                return productService.getProductsByName(name);
+            }
+
+
     @RequestMapping(value = "product",method = RequestMethod.GET)
     public  List<Product> list(){
         return productService.getProducts();
