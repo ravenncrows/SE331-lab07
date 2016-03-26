@@ -2,7 +2,7 @@
  * Created by HH on 2016/3/26.
  */
 'use strict'
-var shoppingCartServices = angular.module('shoppingCartServices',['ngResource']);
+var shoppingCartServices = angular.module('shoppingCartServices',['$resource','API_URL','ngResource']);
 +shoppingCartServices.factory('shoppingCartService',function($resource){
        return $resource('/shoppingcart/:id', { id: '@_id' }, {
            update: {
