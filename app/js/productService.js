@@ -7,6 +7,7 @@ productService.factory('productService', ['$resource','API_URL',function($resour
             method: 'PUT' // this method issues a PUT request
         }});
 
+
 }])
 
 productService.service('totalCalService',function() {
@@ -20,20 +21,12 @@ productService.service('totalCalService',function() {
         return output;
     }
 })
-productService.factory('queryProductService',function($resource){
-    return $resource('/getProduct/?name=:name',
-        {
-            query:{method:'GET',params:{name:''},isArray:true}
+productService.factory('queryProductService',['$resource','API_URL',function($resource,API_URL){
+        return $resource(API_URL+'/getProduct/?name=:name',
+            {query:{method:'GET',params:{name:''},isArray:true}
 
-        }
-    )
-})
-productMainController.controller('listProductController', ['$scope', '$http', '$rootScope','productService','$route','totalCalService','queryProductService',
-     function ($scope, $http, $rootScope,productService,$route,totalCalService,queryProductService) {
-         $scope.searchProduct = function(name){
-                       queryProductService.query({name:name},function(data) {
-                                $scope.products = data;
-                            });
-                   }
+            })
+}])
 
-     }])
+
+
