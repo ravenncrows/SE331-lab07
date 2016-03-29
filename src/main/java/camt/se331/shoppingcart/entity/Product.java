@@ -10,7 +10,7 @@ import javax.persistence.Id;
 @Entity
 public class Product implements Comparable{
     @Id
-            @GeneratedValue
+    @GeneratedValue
     Long id;
     String name;
     String description;
